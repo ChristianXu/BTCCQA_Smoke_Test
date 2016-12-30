@@ -139,7 +139,7 @@ def set_yaml():
 
     if len(url) == 0:
         with open(url_path, encoding="utf8") as f:
-            f = open(url_path)
+            # f = open(url_path)
             data = yaml.load(f)
 
             url.update(data.get("url"))

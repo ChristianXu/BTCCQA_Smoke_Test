@@ -3,6 +3,7 @@ __author__ = 'sara'
 from comm import BaseTest
 from comm import get_url
 from time import sleep
+from comm import my_assert
 import test_set.btcchina.bsnsCommon as bcomm
 
 
@@ -61,6 +62,8 @@ class TestTrade(BaseTest):
     def check_result(self, before_orders, after_orders):
         sleep(2)
         if after_orders-3 == before_orders:
+            with my_assert(u"充值 cny"):
+                self.assertEqual(1, 1)
             # open_order_title = self.get_element("trade", "open_orders_title")
             # sleep(4)
             # self.driver.execute("arguments[0].scrollIntoView()", open_order_title)

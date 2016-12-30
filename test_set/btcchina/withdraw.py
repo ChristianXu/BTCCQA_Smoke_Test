@@ -24,6 +24,9 @@ class TestWithdraw(BaseTest):
         sleep(0.1)
         while self.get_element("withdraw", "withdraw_btn_loading") is not None:
             sleep(1)
+
+        with my_assert("提现 btc"):
+            self.assertTrue(self.get_element("withdraw", "success_msg").is_displayed())
         self.get_element("withdraw", "cancel").click()
         sleep(1)
 

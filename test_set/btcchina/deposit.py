@@ -29,7 +29,7 @@ class TestDeposit(BaseTest):
         while self.get_element("deposit", "create_request_loading") is not None:
             sleep(1)
         sleep(2)
-        with my_assert():
+        with my_assert(u"充值 cny"):
             self.assertEqual(value, self.get_element("deposit", "transfer_info_amount").text)
         print(self.get_element("deposit", "close"))
 
@@ -48,10 +48,10 @@ class TestDeposit(BaseTest):
     def test_deposit_btc(self):
         open_url(get_url("deposit_btc"))
         sleep(3)
-        with my_assert():
+        with my_assert(u"充值 cny 检查二维码显示"):
             self.assertIsNotNone(self.get_element("deposit", "btc_qrcode"))
 
-        with my_assert():
+        with my_assert(u"充值 cny 检查地址显示"):
             self.assertIsNotNone(self.get_element("deposit", "btc_address"))
 
     def get_random(self):

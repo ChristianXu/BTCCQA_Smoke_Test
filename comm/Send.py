@@ -9,28 +9,29 @@ from email.header import Header
 class SendEmail:
     def __init__(self):
 
-        self.mail_host = "smtp.gmail.com"
-        self.mail_user = "tongshan1993@gmail.com"
-        self.mail_pass = "shan84109649"
+        self.mail_host = u"smtp.gmail.com"
+        self.mail_user = u"tongshan1993@gmail.com"
+        self.mail_pass = u"shan84109649"
 
-        self.sender = "tongshan1993@gmail.com"
-        self.receivers = ["sara.tong@btcc.com"]
+        self.sender = u"tongshan1993@gmail.com"
+        self.receivers = [u"sara.tong@btcc.com"]
         self.message = MIMEText(Template.get_template(), 'html', 'utf-8')
 
-        self.subject = get_time() + '测试报告'
+        self.subject = get_time() + u'测试报告'
         self.message['Subject'] = Header(self.subject, 'utf-8')
 
     def send(self):
 
         try:
             s = smtplib.SMTP_SSL(self.mail_host)
+            smtplib.SMTP("smtp.gmail.com", 587)
             s.login(self.mail_user, self.mail_pass)
             s.sendmail(self.sender, self.receivers, self.message.as_string())
-            print("邮件发送成功")
+            print(u"邮件发送成功")
             s.quit()
         except smtplib.SMTPException as e:
             print(e)
-            print("Error: 无法发送邮件")
+            print(u"Error: 无法发送邮件")
 
 
 def get_time():
