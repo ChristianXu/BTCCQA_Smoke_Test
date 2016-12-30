@@ -23,12 +23,12 @@ class TestTrade(BaseTest):
         self.buy()
         after_orders = self.get_open_orders()
         print("======>after_orders :%s" % after_orders)
-        self.check_result(before_orders, after_orders)
+        self.check_result(before_orders, after_orders, "购买btc")
         before_orders = self.get_open_orders()
         self.sell()
         after_orders = self.get_open_orders()
         print("======>after_orders :%s" % after_orders)
-        self.check_result(before_orders, after_orders)
+        self.check_result(before_orders, after_orders, "出售btc")
 
     def test_trade_ltc(self):
         self.driver.get(get_url("trade_ltc"))
@@ -36,11 +36,11 @@ class TestTrade(BaseTest):
         before_orders = self.get_open_orders()
         self.buy()
         after_orders = self.get_open_orders()
-        self.check_result(before_orders, after_orders)
+        self.check_result(before_orders, after_orders, "购买ltc")
         before_orders = self.get_open_orders()
         self.sell()
         after_orders = self.get_open_orders()
-        self.check_result(before_orders, after_orders)
+        self.check_result(before_orders, after_orders, "出售ltc")
 
     def buy(self):
         self.get_element("trade", "buy_price").send_keys("1")
@@ -59,10 +59,10 @@ class TestTrade(BaseTest):
     def get_open_orders(self):
         return len(self.get_elements("trade", "open_orders_table_tr"))
 
-    def check_result(self, before_orders, after_orders):
+    def check_result(self, before_orders, after_orders, msg):
         sleep(2)
         if after_orders-3 == before_orders:
-            with my_assert(u"充值 cny"):
+            with my_assert(msg):
                 self.assertEqual(1, 1)
             # open_order_title = self.get_element("trade", "open_orders_title")
             # sleep(4)
