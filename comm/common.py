@@ -123,16 +123,17 @@ def set_xml():
 
 def set_yaml():
     if len(activity) == 0:
-        f = open(element_path)
-        data = yaml.load(f)
 
-        activity.update(data.get("page"))
+        with open(element_path, encoding='utf8') as f:
+            data = yaml.load(f)
+            activity.update(data.get("page"))
 
     if len(url) == 0:
-        f = open(url_path)
-        data = yaml.load(f)
+        with open(url_path, encoding="utf8") as f:
+            f = open(url_path)
+            data = yaml.load(f)
 
-        url.update(data.get("url"))
+            url.update(data.get("url"))
 
 
 def get_el_dict(page_name, element_name):
