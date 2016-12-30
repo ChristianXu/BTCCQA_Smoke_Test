@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+
+    <web_page name = "exchange">
+
+        <element name="sign_in_btn">
+            <pathtype>ID</pathtype>
+            <pathvalue>sign_in_btn</pathvalue>
+        </element>
+        <element name="email_text">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="header_nav"]/ul/li[4]/a</pathvalue>
+        </element>
+        <element name="logout_btn">
+            <pathtype>ID</pathtype>
+            <pathvalue>logout_btn</pathvalue>
+        </element>
+        <element name="login_form">
+            <pathtype>ID</pathtype>
+            <pathvalue>sign_in_form</pathvalue>
+        </element>
+        <element name="email">
+            <pathtype>NAME</pathtype>
+            <pathvalue>email</pathvalue>
+        </element>
+        <element name="password">
+            <pathtype>NAME</pathtype>
+            <pathvalue>password</pathvalue>
+        </element>
+        <element name="login_btn">
+            <pathtype>ID</pathtype>
+            <pathvalue>sign_in_button</pathvalue>
+        </element>
+        <element name="login_btn_loading">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="sign_in_button"]/span</pathvalue>
+        </element>
+        <element name="check_account">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id='main']/div[2]/div/div[2]/a[1]</pathvalue>
+        </element>
+        <element name="trade">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="main"]/div[2]/div/div[2]/a[2]</pathvalue>
+        </element>
+        <element name="how_is_work">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="page_content"]/section/div[2]/div/div[2]/a</pathvalue>
+        </element>
+
+    </web_page>
+    <web_page name="account">
+        <element name="trade_now">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="root"]/div/div/div[1]/div[2]/div/div/div[1]/div/a</pathvalue>
+        </element>
+        <element name="balance_USD">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>div[class='smallTitle___3LDvT']>div:nth-child(2)>span:nth-child(1)>span</pathvalue>
+        </element>
+        <element name="balance_BTC">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>div[class='smallTitle___3LDvT']>div:nth-child(2)>span:nth-child(2)>span</pathvalue>
+        </element>
+        <element name="deposit_USD">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>a[href='/account/deposit/usd']</pathvalue>
+        </element>
+        <element name="withdraw_USD">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>a[href='/account/withdraw/usd']</pathvalue>
+        </element>
+
+        <element name="deposit_BTC">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>a[href='/account/deposit/btc']</pathvalue>
+        </element>
+        <element name="withdraw_BTC">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>a[href='/account/withdraw/btc']</pathvalue>
+        </element>
+
+    </web_page>
+
+    <web_page name="deposit">
+        <element name="address_line">
+            <pathtype>CLASSNAME</pathtype>
+            <pathvalue>h3___22sSm</pathvalue>
+        </element>
+        <element name="generate_address">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="root"]/div/div/div[1]/div[2]/div/div[4]/div[1]/div[2]/p/a</pathvalue>
+        </element>
+        <element name="copy_address">
+            <pathtype>XPATH</pathtype>
+            <pathvalue>//*[@id="root"]/div/div/div[1]/div[2]/div/div[4]/div[1]/div[2]/div/button</pathvalue>
+        </element>
+    </web_page>
+
+    <web_page name="withdraw">
+        <element name="btc_amount">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(3)>input:nth-child(3)</pathvalue>
+        </element>
+        <element name="btc_txnpwd">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(5)>input:nth-child(3)</pathvalue>
+        </element>
+        <element name="btc_withdraw_table_amount">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(4)>span</pathvalue>
+        </element>
+        <element name="usd_name">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(1)>span</pathvalue>
+        </element>
+        <element name="usd_balance">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(2)>span>span</pathvalue>
+        </element>
+        <element name="usd_amount">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(3)>input:nth-child(3)</pathvalue>
+        </element>
+        <element name="usd_txnpwd">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>form[class="form___8cMMF"]>div:nth-child(6)>input:nth-child(3)</pathvalue>
+        </element>
+        <element name="usd_withdraw_table_amount">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(6)>span</pathvalue>
+        </element>
+        <element name="withdraw">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>button[type="submit"]</pathvalue>
+        </element>
+        <element name="withdraw_loading">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>button[type="submit"]>div</pathvalue>
+        </element>
+        <element name="withdraw_msg">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>.submit___1W40S>div>span</pathvalue>
+        </element>
+    </web_page>
+    <web_page name="manage_address_book">
+        <element name="address">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>input[name="address"]</pathvalue>
+        </element>
+        <element name="address_label">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>input[name="remarks"]</pathvalue>
+        </element>
+        <element name="verification_code">
+            <pathtype>ID</pathtype>
+            <pathvalue>vcode_id</pathvalue>
+        </element>
+        <element name="add_address_btn">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>button[type="submit"]</pathvalue>
+        </element>
+        <element name="add_address_loading">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>button[type="submit"]>div</pathvalue>
+        </element>
+        <element name="address_table_tr">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>.table___2sNIa>tbody>tr</pathvalue>
+        </element>
+        <element name="delete_address">
+            <pathtype>CSS_SELECTOR</pathtype>
+            <pathvalue>.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(3)>div>a</pathvalue>
+        </element>
+    </web_page>
+
+    <web_page name="trade">
+        <element name="buy_limit">
+            <pathtype>CLASSNAME</pathtype>
+            <pathvalue>btn-green</pathvalue>
+        </element>
+    </web_page>
+</page>

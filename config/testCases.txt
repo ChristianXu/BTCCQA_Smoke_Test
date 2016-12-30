@@ -1,0 +1,4 @@
+#deposit
+homepage
+#trade
+#withdraw

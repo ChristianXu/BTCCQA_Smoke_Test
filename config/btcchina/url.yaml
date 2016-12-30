@@ -1,0 +1,12 @@
+info: btcchina 页面URL
+
+url:
+  homepage: https://www.btcchina.com/
+  trade: https://www.btcchina.com/exc/trade/cnybtc
+  trade_ltc: https://www.btcchina.com/exc/trade/cnyltc
+  market_trend: https://www.btcchina.com/trade/depth
+  help_center: https://www.btcc.com/event/spot-user-guide
+#  deposit_withdraw: https://www.btcchina.com/exc/account/fund.cny
+  deposit_cny: https://www.btcchina.com/exc/account/fund.cny
+  deposit_btc: https://www.btcchina.com/exc/account/fund.btc
+  withdraw_btc: https://www.btcchina.com/exc/account/withdraw.btc

@@ -1,0 +1,161 @@
+info: btcchina页面element定位信息
+
+page:
+  homepage:
+    email:
+      - name
+      - email
+    password:
+      - name
+      - password
+    login_btn:
+      - css_selector
+      - button[type='submit']
+    login_loading:
+      - css_selector
+      - button[type='submit']>div
+    total_assets:
+      - css_selector
+      - div[class='amount_2tTWR']>span:nth-child(2)
+    available:
+      - css_selector
+      - div[class='amounts_2cuJ-']>div:nth-child(1)>span:nth-child(2)
+    balance_btc:
+      - css_selector
+      - div[class='amounts_2cuJ-']>div:nth-child(2)>span:nth-child(2)
+    balance_ltc:
+      - css_selector
+      - div[class='amounts_2cuJ-']>div:nth-child(3)>span:nth-child(2)
+    trade:
+      - css_selector
+      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(2)>a
+    market_Trend:
+      - css_selector
+      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(3)>a
+    help_center:
+      - css_selector
+      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(4)>a
+    deposit_withdraw:
+      - css_selector
+      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(5)>a
+    email_text:
+      - css_selector
+      - li[class='info_PIvmp']>a
+    logout_btn:
+      - css_selector
+      - ul[class='subMenu_2Qr3P']>li:nth-child(3)>a
+    BTC/CNY:
+      - css_selector
+      - div[class='markets_37myA']>a:nth-child(1)
+    LTC/CNY:
+      - css_selector
+      - div[class='markets_37myA']>a:nth-child(2)
+    last_price:
+      - xpath
+      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[1]/div/div[2]/span[2]
+    daily_high:
+      - xpath
+      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[2]/div/div[2]/span[2]
+    daily_low:
+      - xpath
+      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/span[2]
+  trade:
+    buy_price:
+      - xpath
+      - //*[@id="bid_trade_form"]/div[3]/div[1]/div/input
+    buy_amount:
+      - xpath
+      - //*[@id="bid_trade_form"]/div[3]/div[4]/div/input
+    buy_transpassword:
+      - xpath
+      - //*[@id="bid_trade_form"]/div[4]/div[1]/input
+    buy_btn:
+      - xpath
+      - //*[@id="bid_trade_form"]/div[4]/div[2]/button
+    sell_price:
+      - xpath
+      - //*[@id="ask_trade_form"]/div[3]/div[1]/div/input
+    sell_amount:
+      - xpath
+      - //*[@id="ask_trade_form"]/div[3]/div[4]/div/input
+    sell_transpassword:
+      - xpath
+      - //*[@id="ask_trade_form"]/div[4]/div[1]/input
+    sell_btn:
+      - xpath
+      - //*[@id="ask_trade_form"]/div[4]/div[2]/button
+    open_orders_title:
+      - css_selector
+      - section[id='open_order']>div:nth-child(1)
+    open_orders_table_tr:
+      - css_selector
+      - section[id='open_order']>table>tbody>tr
+    first_orders_table_tr_td:
+      - css_selector
+      - section[id='open_order']>table>tbody>tr:nth-child(1)>td
+    cancle_first_orders_table_tr:
+      - css_selector
+      - section[id='open_order']>table>tbody>tr:nth-child(1)>td:nth-child(8)>span>a:nth-child(2)
+  deposit:
+    cny_deposit:
+      - css_selector
+      - a[href='account/fund.cny']
+    select_bank:
+      - css_selector
+      - div[class='bank-list-history']>a
+    first_bank:
+      - css_selector
+      - div[class='history-banks']>div:nth-child(2)>div:nth-child(1)>img
+    amount:
+      - name
+      - amount
+    create_request:
+      - css_selector
+      - form[id='fund_cny_form']>div:nth-child(9)>div>button
+    create_request_loading:
+      - css_selector
+      - form[id='fund_cny_form']>div:nth-child(9)>div>button>span
+    transfer_info_amount:
+      - xpath
+      - //*[@id="fundSuccessResultModal"]/div[2]/div[4]/span
+    close:
+      - xpath
+      - //*[@id="fundSuccessResultModal"]/div[1]/a
+    cancel:
+      - xpath
+      - //*[@id="account_fund.cny"]/div[3]/div/table/tbody[2]/tr[1]/td[7]/a
+      - //*[@id="account_fund.cny"]/div[3]/div/table/tbody[2]/tr[1]/td[7]/a
+    confirm_cancel:
+      - css_selector
+      - div[id='CancelModal']>div>div>div>a:nth-child(2)
+    btc_deposit:
+      - css_selector
+      - a[href='account/fund.btc']
+    btc_qrcode:
+      - css_selector
+      - div[class='fund-btc-address-container']>span:nth-child(1)>img
+    btc_address:
+      - css_selector
+      - div[class='fund-btc-address-container']>span:nth-child(2)
+  withdraw:
+    withdraw_amount:
+      - css_selector
+      - div[class='price-input']>input
+    withdraw_trans_password:
+      - css_selector
+      - form[id='withdraw_btc_form']>div:nth-child(5)>input
+    withdraw_btn:
+      - css_selector
+      - form[id='withdraw_btc_form']>div:nth-child(6)>div>button
+    withdraw_btn_loading:
+      - css_selector
+      - form[id='withdraw_btc_form']>div:nth-child(6)>div>button>span
+    cancel:
+      - xpath
+      - //*[@id="account_withdraw.btc"]/div/div/div[2]/table/tbody/tr[1]/td[9]/a
+    confirm:
+      - xpath
+      - //*[@id="deleteBtcWithdrawModal"]/div/div/div[2]/div[2]/a
+    confirm_loading:
+      - xpath
+      - //*[@id="deleteBtcWithdrawModal"]/div/div/div[2]/div[2]/a/span
