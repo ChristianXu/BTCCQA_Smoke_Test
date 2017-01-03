@@ -29,7 +29,7 @@ page:
     trade:
       - css_selector
       - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(2)>a
-    market_Trend:
+    market_trend:
       - css_selector
       - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(3)>a
     help_center:

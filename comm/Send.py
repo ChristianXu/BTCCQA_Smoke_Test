@@ -14,7 +14,7 @@ class SendEmail:
         self.mail_pass = u"shan84109649"
 
         self.sender = u"tongshan1993@gmail.com"
-        self.receivers = [u"sara.tong@btcc.com"]
+        self.receivers = [u"sara.tong@btcc.com", "christian.xu@btcc.com"]
         self.message = MIMEText(Template.get_template(), 'html', 'utf-8')
 
         self.subject = get_time() + u'测试报告'

@@ -35,11 +35,11 @@ class TestHomepage(BaseTest):
             self.assertEqual(url, get_url("trade"))
         self.driver.back()
 
-        self.get_element("homepage", "market_Trend").click()
+        self.get_element("homepage", "market_trend").click()
         sleep(1)
         url = self.driver.current_url
         with my_assert("点击market Trend 链接跳转"):
-            self.assertEqual(url, get_url("market_Trend"))
+            self.assertEqual(url, get_url("market_trend"))
         self.driver.back()
 
         self.get_element("homepage", "help_center").click()
