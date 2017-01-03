@@ -14,7 +14,8 @@ prjDir = comm.prjDir
 
 configfile_path = os.path.join(prjDir, "config", "setting.ini")
 geckodriver_path = os.path.join(prjDir, "config", "geckodriver")
-chrome_path = os.path.join(prjDir, "config", "chromedriver")
+chrome_win_path = os.path.join(prjDir, "config", "chromedriver.exe")
+chrome_mac_path = os.path.join(prjDir, "config", "chromedriver")
 element_path = os.path.join(prjDir, "config", "btcchina", "element.yaml")
 url_path = os.path.join(prjDir, "config", "btcchina", "url.yaml")
 
@@ -57,7 +58,10 @@ class DRIVER:
     def get_driver(cls):
 
         if DRIVER.driver is None:
-            DRIVER.driver = webdriver.Chrome(executable_path=chrome_path)
+            if os.name == 'posix':
+                DRIVER.driver = webdriver.Chrome(executable_path=chrome_mac_path)
+            else:
+                DRIVER.driver = webdriver.Chrome(executable_path=chrome_win_path)
             DRIVER.driver.maximize_window()
             DRIVER.driver.set_page_load_timeout(120)
             DRIVER.driver.implicitly_wait(10)
