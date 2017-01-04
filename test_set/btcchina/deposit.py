@@ -21,16 +21,21 @@ class TestDeposit(BaseTest):
         open_url(get_url("deposit_cny"))
         sleep(2)
         self.get_element("deposit", "select_bank").click()
+        sleep(1)
         self.get_element("deposit", "first_bank").click()
         sleep(1)
         self.get_element("deposit", "amount").send_keys(self.get_random())
-        value = self.get_element("deposit", "amount").get_attribute("value")
+        amount = self.get_element("deposit", "amount").get_attribute("value")
+        amount_decimal = self.get_element("deposit", "amount-decimal").text
+        value = amount+amount_decimal
+        print("========> "+value)
         self.get_element("deposit", "create_request").click()
         while self.get_element("deposit", "create_request_loading") is not None:
             sleep(1)
         sleep(2)
         with my_assert(u"充值 cny"):
-            self.assertEqual(value, self.get_element("deposit", "transfer_info_amount").text)
+            value2 = self.get_element("deposit", "transfer_info_amount").text
+            self.assertEqual(value, value2.replace(",", ""))
         print(self.get_element("deposit", "close"))
 
         while self.get_element("deposit", "close").is_displayed():
@@ -48,10 +53,10 @@ class TestDeposit(BaseTest):
     def test_deposit_btc(self):
         open_url(get_url("deposit_btc"))
         sleep(3)
-        with my_assert(u"充值 cny 检查二维码显示"):
+        with my_assert(u"充值 btc 检查二维码显示"):
             self.assertIsNotNone(self.get_element("deposit", "btc_qrcode"))
 
-        with my_assert(u"充值 cny 检查地址显示"):
+        with my_assert(u"充值 btc 检查地址显示"):
             self.assertIsNotNone(self.get_element("deposit", "btc_address"))
 
     def get_random(self):

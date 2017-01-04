@@ -1,4 +1,0 @@
-deposit
-homepage
-trade
-withdraw

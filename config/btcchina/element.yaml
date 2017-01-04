@@ -109,6 +109,9 @@ page:
     amount:
       - name
       - amount
+    amount-decimal:
+      - class_name
+      - amount-decimal
     create_request:
       - css_selector
       - form[id='fund_cny_form']>div:nth-child(9)>div>button

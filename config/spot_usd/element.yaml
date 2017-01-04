@@ -1,0 +1,126 @@
+account:
+  balance_BTC:
+    - css_selector
+    - 'div[class=''smallTitle___3LDvT'']>div:nth-child(2)>span:nth-child(2)>span'
+  balance_USD:
+    - css_selector
+    - 'div[class=''smallTitle___3LDvT'']>div:nth-child(2)>span:nth-child(1)>span'
+  deposit_BTC:
+    - css_selector
+    - 'a[href=''/account/deposit/btc'']'
+  deposit_USD:
+    - css_selector
+    - 'a[href=''/account/deposit/usd'']'
+  trade_now:
+    - xpath
+    - '//*[@id="root"]/div/div/div[1]/div[2]/div/div/div[1]/div/a'
+  withdraw_BTC:
+    - css_selector
+    - 'a[href=''/account/withdraw/btc'']'
+  withdraw_USD:
+    - css_selector
+    - 'a[href=''/account/withdraw/usd'']'
+deposit:
+  address_line:
+    - classname
+    - h3___22sSm
+  copy_address:
+    - xpath
+    - '//*[@id="root"]/div/div/div[1]/div[2]/div/div[4]/div[1]/div[2]/div/button'
+  generate_address:
+    - xpath
+    - '//*[@id="root"]/div/div/div[1]/div[2]/div/div[4]/div[1]/div[2]/p/a'
+exchange:
+  check_account:
+    - xpath
+    - '//*[@id=''main'']/div[2]/div/div[2]/a[1]'
+  email:
+    - name
+    - email
+  email_text:
+    - xpath
+    - '//*[@id="header_nav"]/ul/li[4]/a'
+  how_is_work:
+    - xpath
+    - '//*[@id="page_content"]/section/div[2]/div/div[2]/a'
+  login_btn:
+    - id
+    - sign_in_button
+  login_btn_loading:
+    - xpath
+    - '//*[@id="sign_in_button"]/span'
+  login_form:
+    - id
+    - sign_in_form
+  logout_btn:
+    - id
+    - logout_btn
+  password:
+    - name
+    - password
+  sign_in_btn:
+    - id
+    - sign_in_btn
+  trade:
+    - xpath
+    - '//*[@id="main"]/div[2]/div/div[2]/a[2]'
+manage_address_book:
+  add_address_btn:
+    - css_selector
+    - 'button[type="submit"]'
+  add_address_loading:
+    - css_selector
+    - 'button[type="submit"]>div'
+  address:
+    - css_selector
+    - 'input[name="address"]'
+  address_label:
+    - css_selector
+    - 'input[name="remarks"]'
+  address_table_tr:
+    - css_selector
+    - .table___2sNIa>tbody>tr
+  delete_address:
+    - css_selector
+    - '.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(3)>div>a'
+  verification_code:
+    - id
+    - vcode_id
+trade:
+  buy_limit:
+    - classname
+    - btn-green
+withdraw:
+  btc_amount:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(3)>input:nth-child(3)'
+  btc_txnpwd:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(5)>input:nth-child(3)'
+  btc_withdraw_table_amount:
+    - css_selector
+    - '.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(4)>span'
+  usd_amount:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(3)>input:nth-child(3)'
+  usd_balance:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(2)>span>span'
+  usd_name:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(1)>span'
+  usd_txnpwd:
+    - css_selector
+    - 'form[class="form___8cMMF"]>div:nth-child(6)>input:nth-child(3)'
+  usd_withdraw_table_amount:
+    - css_selector
+    - '.table___2sNIa>tbody>tr:nth-child(1)>td:nth-child(6)>span'
+  withdraw:
+    - css_selector
+    - 'button[type="submit"]'
+  withdraw_loading:
+    - css_selector
+    - 'button[type="submit"]>div'
+  withdraw_msg:
+    - css_selector
+    - .submit___1W40S>div>span

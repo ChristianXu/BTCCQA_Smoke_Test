@@ -33,10 +33,11 @@ def __set_log():
 
 __set_log()
 
-__all__ = ['EXCELTestRunner', 'ReadConfig', 'get_driver', 'open_url', 'get_element', 'get_elements', 'get_url',
+__all__ = ['EXCELTestRunner', 'Info', 'Init', 'get_driver', 'open_url', 'get_element', 'get_elements', 'get_url',
            'is_page_loaded', 'my_assert', 'Template', 'SendEmail', ]
 
-from .common import ReadConfig, get_driver, open_url, get_element, get_elements, get_url, is_page_loaded, my_assert
+from .common import Info, get_driver, open_url, get_element, get_elements, get_url, is_page_loaded, my_assert
 from .EXCELTestRunner import EXCELTestRunner
 from .BaseTest import BaseTest
+from .DRIVER import Init
 from .Send import Template, SendEmail

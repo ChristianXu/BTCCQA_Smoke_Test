@@ -98,7 +98,7 @@ class Template:
     def get_template(cls):
         return cls.top+cls.middle+cls.bottom
 
-
-if __name__ == "__main__":
-     s = SendEmail()
-     s.send()
+#
+# if __name__ == "__main__":
+#      s = SendEmail()
+#      s.send()

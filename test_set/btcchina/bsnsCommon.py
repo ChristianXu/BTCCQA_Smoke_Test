@@ -24,6 +24,8 @@ def login(email, password):
 
 def logout():
 
+    sleep(2)
+
     e = get_element("homepage", "email_text")
     action = ActionChains(driver)
 
