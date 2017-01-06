@@ -8,6 +8,7 @@ import comm
 import unittest
 from selenium import webdriver
 from multiprocessing.pool import Pool
+from multiprocessing.context import SpawnContext
 
 
 prjDir = comm.prjDir
@@ -36,6 +37,9 @@ BROWSER = {
     "firefox": webdriver.Firefox,
 }
 
+s = SpawnContext()
+q = s.Queue()
+result = []
 
 class Init:
 
@@ -56,36 +60,43 @@ class Init:
 
     def run(self):
         cases = self.get_test_case()
+        # 定义一个进程池
         pool = Pool(processes=len(cases))
-        result = []
 
-        for key, value in cases.items():
-
-            result.append(pool.apply_async(self.init_driver, args=(key, value)))
+        result.append(pool.map_async(self.init_driver, cases.values()))
 
         pool.close()
         pool.join()
 
+        while not q.empty():
+            comm.Template.set_middle(q.get())
+
+        send = comm.SendEmail()
+        send.send()
+
         for res in result:
+            print(res.get())
             print(":::", res.get())
 
-    def init_driver(self, website, info):
+    def init_driver(self, info):
         browser = info.get("browser")
         web_driver = WEB_DRIVER.get(browser)
         browser_class = BROWSER.get(browser)
         driver = browser_class(executable_path=web_driver)
         driver.maximize_window()
         driver.set_page_load_timeout(120)
-        comm.Info.set_info(website, info.get("user"), driver)
+        comm.Info.set_info(info.get("website"), info.get("user"), driver, browser)
 
-        self.run_test(self.create_suite(website, info.get("test_case")))
+        self.run_test(self.create_suite(info.get("website"), info.get("test_case")))
+
+        result = comm.Template.middle
+        q.put(result)
 
     def run_test(self, case_suite):
         runner = unittest.TextTestRunner()
         runner.run(case_suite)
 
-        send = comm.SendEmail()
-        send.send()
+        comm.Info.driver.quit()
 
     def create_suite(self, website, cases):
         """from the caseList,get caseName,According to the caseName to search the testSuite

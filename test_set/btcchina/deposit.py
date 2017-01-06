@@ -15,7 +15,7 @@ class TestDeposit(BaseTest):
     def setUp(self):
         BaseTest.setUp(self)
         open_url(get_url("homepage"))
-        bcomm.login("protestaccount002", "btcchinA1")
+        bcomm.login(self.user.get("email"), self.user.get("password"))
 
     def test_deposit_cny(self):
         open_url(get_url("deposit_cny"))

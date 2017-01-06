@@ -12,7 +12,7 @@ class TestTrade(BaseTest):
     def setUp(self):
         BaseTest.setUp(self)
         self.driver.get(get_url("homepage"))
-        bcomm.login("protestaccount002", "btcchinA1")
+        bcomm.login(self.user.get("email"), self.user.get("password"))
 
     def test_trade_btc(self):
         self.driver.get(get_url("trade"))
@@ -45,14 +45,16 @@ class TestTrade(BaseTest):
     def buy(self):
         self.get_element("trade", "buy_price").send_keys("1")
         self.get_element("trade", "buy_amount").send_keys("1")
-        self.get_element("trade", "buy_transpassword").send_keys("btcchina1")
+        self.get_element("trade", "buy_transpassword").send_keys(self.user.get("trans_password"))
+        sleep(1)
         self.get_element("trade", "buy_btn").click()
         sleep(3)
 
     def sell(self):
         self.get_element("trade", "sell_price").send_keys("10000")
         self.get_element("trade", "sell_amount").send_keys("0.001")
-        self.get_element("trade", "sell_transpassword").send_keys("btcchina1")
+        self.get_element("trade", "sell_transpassword").send_keys(self.user.get("trans_password"))
+        sleep(1)
         self.get_element("trade", "sell_btn").click()
         sleep(3)
 

@@ -15,11 +15,13 @@ class TestHomepage(BaseTest):
 
     def test(self):
 
-        bcomm.login("protestaccount002", "btcchinA1")
+        bcomm.login(self.user.get("email"), self.user.get("password"))
 
         self.check_result()
 
     def check_result(self):
+
+        sleep(2)
 
         # 检查登陆后的账户 显示是否正确
         value = self.get_element("homepage", "email_text").text
@@ -34,7 +36,7 @@ class TestHomepage(BaseTest):
         with my_assert("点击trade链接跳转"):
             self.assertEqual(url, get_url("trade"))
         self.driver.back()
-
+        sleep(2)
         self.get_element("homepage", "market_trend").click()
         sleep(1)
         url = self.driver.current_url
@@ -42,6 +44,7 @@ class TestHomepage(BaseTest):
             self.assertEqual(url, get_url("market_trend"))
         self.driver.back()
 
+        sleep(2)
         self.get_element("homepage", "help_center").click()
         handels = self.driver.window_handles
         self.driver.switch_to_window(handels[1])
@@ -55,7 +58,7 @@ class TestHomepage(BaseTest):
         sleep(2)
 
         self.driver.refresh()
-
+        sleep(2)
         self.get_element("homepage", "deposit_withdraw").click()
 
         url = self.driver.current_url
@@ -63,6 +66,7 @@ class TestHomepage(BaseTest):
             self.assertEqual(url, get_url("deposit_cny"))
         self.driver.back()
 
+        sleep(2)
         # 检查账户信息是否显示出来
         total_assets = self.get_element("homepage", "total_assets").text
         with my_assert("total assets 显示"):

@@ -12,18 +12,20 @@ class TestWithdraw(BaseTest):
     def setUp(self):
         BaseTest.setUp(self)
         open_url(get_url("homepage"))
-        bcomm.login("protestaccount002", "btcchinA1")
+        bcomm.login(self.user.get("email"), self.user.get("password"))
 
     def test_withdraw_btc(self):
         open_url(get_url("withdraw_btc"))
         sleep(2)
         self.get_element("withdraw", "withdraw_amount").send_keys("0.001")
-        self.get_element("withdraw", "withdraw_trans_password").send_keys("btcchina1")
+        self.get_element("withdraw", "withdraw_trans_password").send_keys(self.user.get("trans_password"))
         sleep(1)
         self.get_element("withdraw", "withdraw_btn").click()
         sleep(0.1)
         while self.get_element("withdraw", "withdraw_btn_loading") is not None:
             sleep(1)
+
+        sleep(3)
 
         with my_assert("提现 btc"):
             self.assertTrue(self.get_element("withdraw", "success_msg").is_displayed())

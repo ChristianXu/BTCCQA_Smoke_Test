@@ -11,16 +11,21 @@ prjDir = comm.prjDir
 
 config_path = os.path.join(prjDir, "config")
 
+
 class Info:
     user = None
     website = None
     driver = None
+    browser = None
 
     @classmethod
-    def set_info(cls, website, user, d):
+    def set_info(cls, website, user, d, browser):
         cls.user = user
         cls.website = website
         cls.driver = d
+        cls.browser = browser
+
+        comm.Template.set_info(website, browser, user.get("email"))
 
 
 def get_driver():

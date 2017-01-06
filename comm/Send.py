@@ -40,7 +40,8 @@ def get_time():
 
 class Template:
 
-    top = """
+    html = """
+
     <style type="text/css">
     table{
     width: 600px;
@@ -55,23 +56,39 @@ class Template:
     border-style: solid;
     border-width: 1px;
     }
-    table tbody tr td{
+    table tr td{
     height: 20px;
     border-style: solid;
     border-width: 1px;
     table
     </style>
+
     <table>
+    %(content)s
+
+    </table>
+    """
+
+    middle = """
+    """
+
+    info = """
     <thead>
+    <tr>
+    <td colspan="3">
+    <span>
+    网站: %(website)s <br/>
+    浏览器: %(browser)s <br/>
+    测试账号: %(user)s <br/>
+    </span>
+    </td>
+    </tr>
     <tr>
     <td>检查点</td>
     <td>结果</td>
     <td>备注</td>
     </tr>
     </thead>
-    <tbody>
-    """
-    middle = """
     """
 
     one_result = """
@@ -81,13 +98,19 @@ class Template:
     <td>%(note)s</td>
     </tr>
     """
-    bottom = """
-    </tbody>
-    </table>
-    """
+
+    @classmethod
+    def set_info(cls, website, browser, email):
+        cls.info = cls.info % dict(
+            website=website,
+            browser=browser,
+            user=email,
+        )
+        cls.middle += cls.info
 
     @classmethod
     def add_result(cls, message, result, note):
+
         cls.middle += cls.one_result % dict(
             message=message,
             result=result,
@@ -96,9 +119,12 @@ class Template:
 
     @classmethod
     def get_template(cls):
-        return cls.top+cls.middle+cls.bottom
+        return cls.html % dict(
+            content=cls.middle
+        )
 
-#
-# if __name__ == "__main__":
-#      s = SendEmail()
-#      s.send()
+    @classmethod
+    def set_middle(cls, middle):
+        cls.middle += middle
+
+

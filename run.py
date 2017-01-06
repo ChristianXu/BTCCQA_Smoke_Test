@@ -2,6 +2,7 @@ __author__ = 'sara'
 
 import comm
 
-init = comm.Init()
-init.run()
 
+if __name__ == "__main__":
+    init = comm.Init()
+    init.run()
