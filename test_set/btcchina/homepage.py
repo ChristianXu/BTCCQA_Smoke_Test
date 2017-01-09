@@ -27,7 +27,7 @@ class TestHomepage(BaseTest):
         value = self.get_element("homepage", "email_text").text
 
         with my_assert("登陆成功"):
-            self.assertEqual("protestaccount002", value)
+            self.assertEqual(self.user.get("email"), value)
 
         # 检查页面跳转是否正常
         self.get_element("homepage", "trade").click()

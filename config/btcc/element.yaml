@@ -1,0 +1,85 @@
+info: btcc页面element定位信息
+
+
+page:
+  homepage:
+    email:
+      - id
+      - ex1_value
+    password:
+      - name
+      - password
+    login_btn:
+      - id
+      - passport_sign_in_button
+    login_loading:
+      - css_selector
+      - button[id='passport_sign_in_button']>span
+    sign_up_btn:
+      - id
+      - sign_up_btn
+    singIn_btn:
+      - id
+      - sign_in_btn
+    email_text:
+      - css_selector
+      - li[class="userInfo"]>a
+    logout_btn:
+      - id
+      - logout_btn
+    BTC/CNY_price:
+      - css_selector
+      - div[id='btc']>div>div[class='last-price']
+    LTC/CNY_price:
+      - css_selector
+      - div[id='ltc']>div>div[class='last-price']
+    COMPLETE:
+      - xpath
+      - //*[@id="why"]/div/div[1]/p/span[1]
+
+  propage:
+    cny_trading:
+      - xpath
+      - //*[@id="main"]/div[2]/div/div[1]/a[2]
+  propage_cny_trade:
+    note_confirm_btn:
+      - css_selector
+      - button[ng-click='accept()']
+    guide_colse_btn:
+      - class_name
+      - btn-skip
+    trade_current_language_div:
+      - class_name
+      - buttonLabel
+    trade_en_language:
+      - xpath
+      - //div[@class='checkBoxContainer']/div[1]
+    trade_ch_language:
+      - xpath
+      - //div[@class='checkBoxContainer']/div[2]
+    order_book:
+      - class_name
+      - tip
+  contactuspage:
+    map_img:
+      - xpath
+      - //*[@id="main"]/div[2]/img
+    map_google:
+      - xpath
+      - //*[@id="main"]/div[2]/iframe
+
+  head:
+    product:
+      - xpath
+      - //div[@id='header_nav']/ul/li[1]/a[@class='dropdown']
+
+  foot:
+    currentLanguage:
+      - class_name
+      - current-lang
+    otherLanguage:
+      - id
+      - lang_btn
+    product:
+      - xpath
+      - //*[@id="footer"]/div[1]/div[2]/ul/li[1]/span

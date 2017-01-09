@@ -41,6 +41,7 @@ s = SpawnContext()
 q = s.Queue()
 result = []
 
+
 class Init:
 
     def __init__(self):
@@ -71,9 +72,6 @@ class Init:
         while not q.empty():
             comm.Template.set_middle(q.get())
 
-        send = comm.SendEmail()
-        send.send()
-
         for res in result:
             print(res.get())
             print(":::", res.get())
@@ -87,7 +85,7 @@ class Init:
         driver.set_page_load_timeout(120)
         comm.Info.set_info(info.get("website"), info.get("user"), driver, browser)
 
-        self.run_test(self.create_suite(info.get("website"), info.get("test_case")))
+        self.run_test(self.__create_suite(info.get("website"), info.get("test_case")))
 
         result = comm.Template.middle
         q.put(result)
@@ -98,7 +96,10 @@ class Init:
 
         comm.Info.driver.quit()
 
-    def create_suite(self, website, cases):
+        send = comm.SendEmail()
+        send.send()
+
+    def __create_suite(self, website, cases):
         """from the caseList,get caseName,According to the caseName to search the testSuite
         :return:test_suite
         """

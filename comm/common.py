@@ -133,6 +133,7 @@ def get_elements(page_name, element_name):
     element_dict = get_el_dict(page_name, element_name)
 
     path_type = element_dict[0]
+
     path_value = element_dict[1]
 
     try:

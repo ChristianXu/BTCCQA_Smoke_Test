@@ -5,7 +5,9 @@ Test01:
   browser: chrome
   user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
   test_case:
-#    - login
+#    - contactuspage
+#    - propage
+#    - homepage
 
 Test02:
   website: spot_usd
