@@ -29,8 +29,8 @@ def logout():
     e = get_element("homepage", "email_text")
     action = ActionChains(driver)
 
-    action.move_to_element(e).perform()
-    action.click_and_hold(e).perform()
-    action.release().perform()
+    action.move_to_element(e).click_and_hold(e).release().perform()
+    # action.click_and_hold(e).perform()
+    # action.release().perform()
 
     get_element("homepage", "logout_btn").click()

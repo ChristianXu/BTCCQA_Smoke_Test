@@ -9,6 +9,9 @@ import unittest
 from selenium import webdriver
 from multiprocessing.pool import Pool
 from multiprocessing.context import SpawnContext
+import logging
+
+logger = logging.getLogger()
 
 
 prjDir = comm.prjDir
@@ -71,10 +74,6 @@ class Init:
 
         while not q.empty():
             comm.Template.set_middle(q.get())
-
-        for res in result:
-            print(res.get())
-            print(":::", res.get())
 
     def init_driver(self, info):
         browser = info.get("browser")

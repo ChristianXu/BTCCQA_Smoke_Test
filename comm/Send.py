@@ -27,11 +27,11 @@ class SendEmail:
             smtplib.SMTP("smtp.gmail.com", 587)
             s.login(self.mail_user, self.mail_pass)
             s.sendmail(self.sender, self.receivers, self.message.as_string())
-            print(u"邮件发送成功")
+            print(u"send successful")
             s.quit()
         except smtplib.SMTPException as e:
             print(e)
-            print(u"Error: 无法发送邮件")
+            print(u"Error: can't send")
 
 
 def get_time():

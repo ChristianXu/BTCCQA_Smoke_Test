@@ -24,7 +24,7 @@ def __set_log():
     fh.setFormatter(formatter)
     fh.setLevel(logging.INFO)
     out.setFormatter(formatter)
-    out.setLevel(logging.DEBUG)
+    out.setLevel(logging.INFO)
 
     logger.addHandler(fh)
     logger.addHandler(out)
