@@ -148,7 +148,8 @@ page:
       - form[id='withdraw_btc_form']>div:nth-child(5)>input
     withdraw_btn:
       - css_selector
-      - form[id='withdraw_btc_form']>div:nth-child(6)>div>button
+#      - //*[@id="withdraw_cny_form"]/div[4]/div/button
+      - form[id='withdraw_btc_form']>div:nth-child(6)>div>div>button
     success_msg:
       - css_selector
       - div[ng-show='showServerSuccessMsg']
