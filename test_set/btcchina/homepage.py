@@ -46,20 +46,20 @@ class TestHomepage(BaseTest):
         self.driver.back()
 
         sleep(2)
-        self.get_element("homepage", "help_center").click()
-        handels = self.driver.window_handles
-        self.driver.switch_to_window(handels[1])
-        sleep(2)
-        url = self.driver.current_url
-        with my_assert("点击help center 链接跳转"):
-            self.assertEqual(url, get_url("help_center"))
-
-        self.driver.close()
-        self.driver.switch_to_window(handels[0])
-        sleep(2)
-
-        self.driver.refresh()
-        sleep(2)
+        # self.get_element("homepage", "help_center").click()
+        # handels = self.driver.window_handles
+        # self.driver.switch_to_window(handels[1])
+        # sleep(2)
+        # url = self.driver.current_url
+        # with my_assert("点击help center 链接跳转"):
+        #     self.assertEqual(url, get_url("help_center"))
+        #
+        # self.driver.close()
+        # self.driver.switch_to_window(handels[0])
+        # sleep(2)
+        #
+        # self.driver.refresh()
+        # sleep(2)
         self.get_element("homepage", "deposit_withdraw").click()
 
         url = self.driver.current_url

@@ -32,12 +32,12 @@ page:
     market_trend:
       - css_selector
       - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(3)>a
-    help_center:
-      - css_selector
-      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(4)>a
+#    help_center:
+#      - css_selector
+#      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(4)>a
     deposit_withdraw:
       - css_selector
-      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(5)>a
+      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(4)>a
     email_text:
       - css_selector
       - li[class='info_PIvmp']>a
@@ -52,13 +52,13 @@ page:
       - div[class='markets_37myA']>a:nth-child(2)
     last_price:
       - xpath
-      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[1]/div/div[2]/span[2]
+      - //*[@id="app"]/div/div/div/div/div/div[2]/div/div[2]/div[1]/div[1]/div/div/div[2]/span[2]
     daily_high:
       - xpath
-      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[2]/div/div[2]/span[2]
+      - //*[@id="app"]/div/div/div/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/div/div[2]/span[2]
     daily_low:
       - xpath
-      - //*[@id="app"]/div/div/div/div/div[2]/div/div[2]/div[3]/div/div[2]/span[2]
+      - //*[@id="app"]/div/div/div/div/div/div[2]/div/div[2]/div[1]/div[2]/div[2]/div/div[2]/span[2]
   trade:
     buy_price:
       - xpath
