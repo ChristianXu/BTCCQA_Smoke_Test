@@ -15,8 +15,3 @@ class BaseTest(unittest.TestCase):
         self.logger = logging.getLogger()
         self.driver = comm.get_driver()
         self.user = comm.Info.user
-
-
-
-
-

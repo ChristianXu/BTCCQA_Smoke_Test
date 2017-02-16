@@ -168,8 +168,8 @@ def my_assert(msg):
         print(ex)
         comm.Template.add_result(msg, "NG", ex)
 
-
-if __name__ == "__main__":
-
-    __set_yaml()
-    print(get_el_dict("homepage", "login_btn"))
+#
+# if __name__ == "__main__":
+#
+#     __set_yaml()
+#     print(get_el_dict("homepage", "login_btn"))

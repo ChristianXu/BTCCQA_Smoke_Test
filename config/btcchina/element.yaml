@@ -28,16 +28,17 @@ page:
       - div[class='amounts_2cuJ-']>div:nth-child(3)>span:nth-child(2)
     trade:
       - css_selector
-      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(2)>a
+      - //*[@id="app"]/div/div/header/div/div[3]/ul/li[2]/a
+      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(2)>a
     market_trend:
       - css_selector
-      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(3)>a
+      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(3)>a
     help_center:
       - css_selector
-      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(4)>a
+      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(4)>a
     deposit_withdraw:
       - css_selector
-      - div[class='navigation_3Pzvd   hasAccount_1LKnU ']>ul>li:nth-child(5)>a
+      - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(5)>a
     email_text:
       - css_selector
       - li[class='info_PIvmp']>a
@@ -126,7 +127,6 @@ page:
       - //*[@id="fundSuccessResultModal"]/div[1]/a
     cancel:
       - xpath
-      - //*[@id="account_fund.cny"]/div[3]/div/table/tbody[2]/tr[1]/td[7]/a
       - //*[@id="account_fund.cny"]/div[3]/div/table/tbody[2]/tr[1]/td[7]/a
     confirm_cancel:
       - css_selector

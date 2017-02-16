@@ -95,8 +95,8 @@ class Init:
 
         comm.Info.driver.quit()
 
-        send = comm.SendEmail()
-        send.send()
+        # send = comm.SendEmail()
+        # send.send()
 
     def __create_suite(self, website, cases):
         """from the caseList,get caseName,According to the caseName to search the testSuite

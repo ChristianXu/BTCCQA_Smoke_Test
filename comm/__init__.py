@@ -22,9 +22,9 @@ def __set_log():
     # Define the output format of formatter handler
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s - line%(lineno)d: %(message)s')
     fh.setFormatter(formatter)
-    fh.setLevel(logging.INFO)
+    fh.setLevel(logging.DEBUG)
     out.setFormatter(formatter)
-    out.setLevel(logging.INFO)
+    out.setLevel(logging.DEBUG)
 
     logger.addHandler(fh)
     logger.addHandler(out)
