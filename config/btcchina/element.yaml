@@ -28,7 +28,6 @@ page:
       - div[class='amounts_2cuJ-']>div:nth-child(3)>span:nth-child(2)
     trade:
       - css_selector
-      - //*[@id="app"]/div/div/header/div/div[3]/ul/li[2]/a
       - div[class='navigation_3Pzvd hasAccount_1LKnU']>ul>li:nth-child(2)>a
     market_trend:
       - css_selector

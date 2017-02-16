@@ -21,10 +21,10 @@ Test03:
   browser: chrome
   user: {email: protestaccount002, password: btcchinA1, trans_password: btcchina1}
   test_case:
-#    - deposit
+    - deposit
     - homepage
-#    - trade
-#    - withdraw
+    - trade
+    - withdraw
 
 Test04:
   website: btcchina

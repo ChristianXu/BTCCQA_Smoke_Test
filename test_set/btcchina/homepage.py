@@ -24,11 +24,11 @@ class TestHomepage(BaseTest):
         sleep(2)
 
         # 检查登陆后的账户 显示是否正确
-        # value = self.get_element("homepage", "email_text").text
-        value = 'ken***@gmail.com'
+        value = self.get_element("homepage", "email_text").text
+        # value = 'ken***@gmail.com'
 
         with my_assert("登陆成功"):
-            self.assertEqual(self.user.get("email"), value)
+            self.assertEqual('ken***@gmail.com', value)
 
         # 检查页面跳转是否正常
         self.get_element("homepage", "trade").click()
