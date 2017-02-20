@@ -155,7 +155,7 @@ page:
       - div[ng-show='showServerSuccessMsg']
     withdraw_btn_loading:
       - css_selector
-      - form[id='withdraw_btc_form']>div:nth-child(6)>div>button>span
+      - form[id='withdraw_btc_form']>div:nth-child(6)>div>div>button>span
     cancel:
       - xpath
       - //*[@id="account_withdraw.btc"]/div/div/div[2]/table/tbody/tr[1]/td[9]/a
